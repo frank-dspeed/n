@@ -1,0 +1,13 @@
+language: bash
+
+services:
+  - docker
+
+before_install:
+#  - docker build -t carlad/sinatra .
+  - docker run -it --rm -v $PWD/bin/n:/usr/bin/n ubuntu:18.04 /bin/sh -c "n latest;"
+  - docker ps -a
+#  - docker run carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec rake test"
+
+script:
+  - bin/n latest
