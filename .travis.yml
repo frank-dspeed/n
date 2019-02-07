@@ -5,6 +5,8 @@ services:
 
 before_install:
 #  - docker build -t carlad/sinatra .
+  - sudo apt-get update
+  - sudo apt-get install -y curl
   - docker run -it --rm -v $PWD/bin/n:/usr/bin/n ubuntu:18.04 /bin/sh -c "n latest;"
   - docker ps -a
 #  - docker run carlad/sinatra /bin/sh -c "cd /root/sinatra; bundle exec rake test"
